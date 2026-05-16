@@ -178,10 +178,7 @@ def preview_data(df: pd.DataFrame, n: int = 5) -> None:
     print()
 
 
-# ---------------------------------------------------------------------------
 # Database Hook (placeholder for Phase 2)
-# ---------------------------------------------------------------------------
-
 def save_to_database(df: pd.DataFrame) -> None:
     """
     Placeholder: Insert cleaned deal data into MySQL via SQLAlchemy.
@@ -203,11 +200,7 @@ def save_to_database(df: pd.DataFrame) -> None:
     print("[DB]  Database storage not yet configured (Phase 2).")
     print(f"[DB]  Ready to insert {len(df)} rows when database is connected.")
 
-
-# ---------------------------------------------------------------------------
 # Main Entry Point
-# ---------------------------------------------------------------------------
-
 def main() -> None:
     """
     Main pipeline:
