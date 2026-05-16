@@ -1,0 +1,73 @@
+/* ── Tailwind base layers ── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global resets ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0a0f1a;
+  color: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden; /* inner <main> scrolls, not the body */
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Custom thin scrollbar for the main content area ── */
+.scrollbar-steam::-webkit-scrollbar        { width: 6px; }
+.scrollbar-steam::-webkit-scrollbar-track  { background: #0c1119; }
+.scrollbar-steam::-webkit-scrollbar-thumb  { background: #1e2a3a; border-radius: 3px; }
+.scrollbar-steam::-webkit-scrollbar-thumb:hover { background: #2a3a50; }
+
+/* ── Monospace for all price values so digits don't shift ── */
+.price-mono {
+  font-family: "JetBrains Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Reusable component classes built from Tailwind utilities ── */
+@layer components {
+
+  /* Dark card surface used on every panel */
+  .card-steam {
+    @apply bg-[#111827] border border-[#1e2a3a] rounded-xl;
+  }
+
+  /* Primary teal action button */
+  .btn-teal {
+    @apply px-4 py-1.5 bg-[#4ecca3] hover:bg-[#3db892] text-[#0e1420] text-xs font-bold rounded-md transition-colors;
+  }
+
+  /* Muted ghost button for secondary actions */
+  .btn-ghost {
+    @apply px-4 py-1.5 bg-[#1a2332] hover:bg-[#223040] border border-[#2a3a50] text-slate-300 text-xs font-bold rounded-md transition-colors;
+  }
+
+  /* Input / select field */
+  .input-steam {
+    @apply bg-[#1a2332] border border-[#2a3a50] rounded-md text-sm text-slate-300
+           placeholder-slate-500 focus:outline-none focus:border-[#4ecca3] transition-colors;
+  }
+
+  /* Default sidebar nav item */
+  .nav-item {
+    @apply w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+           transition-all text-slate-400 hover:text-slate-200 hover:bg-[#131c2a];
+  }
+
+  /* Active sidebar nav item — teal highlight */
+  .nav-item-active {
+    @apply bg-[#1a2f3f] text-[#4ecca3] border border-[#2a4a5a];
+  }
+}
