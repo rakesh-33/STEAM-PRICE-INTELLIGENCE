@@ -9,9 +9,7 @@ from ml.data_collection.fetch_games import (
 )
 
 
-
 # Data Loading
-
 def load_clean_deals() -> pd.DataFrame:
     """
     Load and clean CheapShark deal data using the existing data pipeline.
@@ -27,8 +25,6 @@ def load_clean_deals() -> pd.DataFrame:
 
 
 # Analytics
-
-
 def get_top_discounts(df: pd.DataFrame, limit: int = 10) -> pd.DataFrame:
     """
     Get the games with the highest discount percentages.
@@ -62,7 +58,6 @@ def calculate_summary_statistics(df: pd.DataFrame) -> dict:
 
 
 # Display Helpers
-
 def print_section_title(title: str) -> None:
     """
     Print a clean section title for console output.
@@ -107,7 +102,6 @@ def print_summary_statistics(stats: dict) -> None:
 
 
 # Visualizations
-
 def plot_top_discounts(top_discounts: pd.DataFrame) -> None:
     """
     Create a bar chart showing the top discounted games.
@@ -138,10 +132,7 @@ def plot_cheapest_games(cheapest_games: pd.DataFrame) -> None:
     plt.show()
 
 
-# ---------------------------------------------------------------------------
 # Main Program
-# ---------------------------------------------------------------------------
-
 def main() -> None:
     """
     Main analytics pipeline:
